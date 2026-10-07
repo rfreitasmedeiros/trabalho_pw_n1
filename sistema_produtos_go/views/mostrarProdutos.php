@@ -15,7 +15,7 @@
     <a href="../index.html">Pagina Inicial</a>
     <br><br>
 
-    <form action="../controladores/buscarProdutos.php" method="GET">
+    <form action="../controladores/rota.php?acao=buscar" method="GET">
         <input type="text" name="nome" placeholder="Digite o nome do produto">
         <button>Buscar</button>
     </form>

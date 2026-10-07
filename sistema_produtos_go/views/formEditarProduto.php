@@ -3,7 +3,7 @@
     session_start();
 
     if(!isset($_SESSION['produto'])){
-        header('Location:../controladores/buscarProdutos.php');
+        header('Location:../index.php');
         exit;
     }
     $produto = $_SESSION['produto'];
@@ -28,6 +28,6 @@
         <button>Atualizar</button>
     </form>
     <br>
-    <a href="../controladores/buscarProdutos.php">Voltar para produtos</a>
+    <a href="../controladores/rota.php?acao=buscar">Voltar para produtos</a>
 </body>
 </html>

@@ -19,7 +19,7 @@
                 $produtoServico->salvar($produto);
 
                 echo "Produto cadastrado com sucesso ";
-                echo "<a href='buscarProdutos.php'>Voltar para produtos</a>";
+                echo "<a href='rota.php?acao=buscar'>Voltar para produtos</a>";
 
             }catch(PDOException $erro){
                 echo "Erro: Erro na base de dados ";
@@ -43,7 +43,7 @@
                 $produtoServico->atualizar($produto);
 
                 echo "Produto atualizado com sucesso ";
-                echo "<a href='buscarProdutos.php'>Voltar para produtos</a>";
+                echo "<a href='rota?acao=buscar'>Voltar para produtos</a>";
 
             }catch(PDOException $erro){
                 echo "Erro: Erro na base de dados ";

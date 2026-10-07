@@ -28,7 +28,7 @@
         $id = $_GET['id'];
         try{
             $produtoControlador->excluir($id);
-            header('Location:buscarProdutos.php');
+            header('Location:rota.php?acao=buscar');
         }catch(Exception $erro){
             echo "Erro: " . $erro->getMessage();
         }
@@ -43,6 +43,25 @@
             header('Location:../views/formEditarProduto.php');
         }catch(Exception $erro){
             echo "Erro: " . $erro->getMessage();
+        }
+    }else if($acao == 'buscar'){
+        try{
+
+        $produtoControlador = new ProdutoControlador();
+
+        if(isset($_GET['nome']) && $_GET['nome'] != ""){
+            $produtos = $produtoControlador->buscarPorNome($_GET['nome']);
+        }else{
+            $produtos = $produtoControlador->buscar();
+        }
+
+        session_start();
+        $_SESSION['produtos'] = $produtos;
+
+        header('Location:../views/mostrarProdutos.php');
+
+        }catch(PDOException $erro){
+            echo $erro->getMessage();
         }
     }
 
