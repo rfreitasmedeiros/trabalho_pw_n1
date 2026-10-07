@@ -6,7 +6,6 @@
 
         $produtoControlador = new ProdutoControlador();
 
-        // se veio um nome pela busca, filtra; senão mostra todos
         if(isset($_GET['nome']) && $_GET['nome'] != ""){
             $produtos = $produtoControlador->buscarPorNome($_GET['nome']);
         }else{

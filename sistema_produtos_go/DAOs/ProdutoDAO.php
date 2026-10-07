@@ -88,7 +88,6 @@
             $stmt->execute();
             $produto = $stmt->fetch(PDO::FETCH_OBJ);
 
-            // se não encontrar nenhum produto, retorna null
             if(!$produto){
                 return null;
             }

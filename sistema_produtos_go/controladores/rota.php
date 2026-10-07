@@ -10,8 +10,7 @@
         $produtoDTO->nome = $_POST['nome'];
         $produtoDTO->preco = $_POST['preco'];
         $produtoDTO->quantidade = $_POST['quantidade'];
-
-        // chama o salvar passando o DTO
+        
         $produtoControlador->salvar($produtoDTO);
 
     }else if($acao == 'atualizar'){
